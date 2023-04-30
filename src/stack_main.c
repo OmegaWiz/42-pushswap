@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 00:03:38 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/04/30 17:49:17 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/04/30 22:46:01 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,17 +27,20 @@ void	ft_init_stack(t_stack *stack, int argc, char **argv)
 	stack->size = 0;
 	while (--i > 0)
 	{
-		if (!is_int(argv[i]))
-		{
+		if (is_int(argv[i]) == 0)
 			ft_putstr_fd("Error\n", 2);
+		if (is_int(argv[i]) == 0)
 			exit(0);
-		}
-		ft_push(stack, ft_atoi(argv[i]));
+		ft_push(stack, ft_atol(argv[i]) + INT_MAX + 1);
 	}
+	if (is_duplicate(stack) == 1)
+		ft_putstr_fd("Error\n", 2);
+	if (is_duplicate(stack) == 1)
+		exit(0);
 	ft_print_stack(stack);
 }
 
-void	ft_push(t_stack *stack, int data)
+void	ft_push(t_stack *stack, long data)
 {
 	t_node	*new;
 
@@ -61,10 +64,27 @@ void	ft_pop(t_stack *stack)
 	stack->size--;
 }
 
-void	ft_reverse(t_stack *stack)
+void	ft_swap(t_stack *stack)
 {
 	t_node	*tmp;
 
+	if (stack->size <= 2)
+		return ;
+	tmp = stack->top->next;
+	stack->top->next = tmp->next;
+	tmp->next->prev = stack->top;
+	tmp->next = stack->top->next->next;
+	tmp->prev = stack->top->next;
+	stack->top->next->next->prev = tmp;
+	stack->top->next->next = tmp;
+}
+
+void	ft_rotate(t_stack *stack)
+{
+	t_node	*tmp;
+
+	if (stack->size <= 1)
+		return ;
 	tmp = stack->top->next;
 	stack->top->next = tmp->next;
 	tmp->next->prev = stack->top;

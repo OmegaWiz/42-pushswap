@@ -6,13 +6,13 @@
 #    By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/05 10:18:10 by kkaiyawo          #+#    #+#              #
-#    Updated: 2023/04/30 00:07:20 by kkaiyawo         ###   ########.fr        #
+#    Updated: 2023/04/30 22:38:06 by kkaiyawo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			=	push_swap
 
-SRCS			=	push_swap.c stack_main.c stack_utils.c
+SRCS			=	push_swap.c stack_main.c stack_utils.c arg_check.c mini_push_swap.c
 
 SRC_DIR			=	./src/
 LIB_DIR			=	./lib/
