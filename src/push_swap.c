@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 23:35:28 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/04/30 16:33:26 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/04/30 17:47:04 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,28 +51,6 @@ void	ft_push_back(t_stack *sa, t_stack *sb)
 	ft_print_stack(sb);
 }
 
-int	arg_check(int argc, char **argv)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	while (++i < argc)
-	{
-		j = -1;
-		while (argv[i][++j])
-		{
-			if (argv[i][j] == '-' && j == 0)
-				continue ;
-			if (ft_isdigit(argv[i][j]) == 0)
-				return (0);
-			if (j > 10)
-				return (0);
-		}
-	}
-	return (1);
-}
-
 int	main(int argc, char **argv)
 {
 	t_stack	sa;
@@ -81,11 +59,6 @@ int	main(int argc, char **argv)
 
 	if (argc == 1)
 		return (0);
-	if (arg_check(argc, argv) == 0)
-	{
-		ft_putstr_fd("Error\n", 2);
-		return (0);
-	}
 	ft_init_stack(&sa, argc, argv);
 	ft_init_stack(&sb, 0, NULL);
 	n = 1;

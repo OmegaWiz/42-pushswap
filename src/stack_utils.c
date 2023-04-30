@@ -6,11 +6,27 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 00:03:40 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/04/30 16:19:48 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/04/30 17:48:19 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int		is_int(char *nbr)
+{
+	int	i;
+
+	i = 0;
+	if (nbr[i] == '-')
+		i++;
+	while (nbr[i])
+	{
+		if (!ft_isdigit(nbr[i]))
+			return (0);
+		i++;
+	}
+	return (1);
+}
 
 void	ft_print_stack(t_stack *stack)
 {

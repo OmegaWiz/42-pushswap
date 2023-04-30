@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 23:36:09 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/04/30 16:35:26 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/04/30 17:48:42 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ struct s_stack
 };
 typedef struct s_stack t_stack;
 
-int		ft_atol(const char *s);
+int		is_int(char *nbr);
 void	ft_init_stack(t_stack *stack, int argc, char **argv);
 void	ft_push(t_stack *stack, int data);
 void	ft_pop(t_stack *stack);

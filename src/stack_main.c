@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 00:03:38 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/04/30 16:16:43 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/04/30 17:49:17 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	ft_init_stack(t_stack *stack, int argc, char **argv)
 {
 	int	i;
+	int n;
 
 	i = argc;
 	stack->top = (t_node *) malloc(sizeof(t_node));
@@ -26,6 +27,11 @@ void	ft_init_stack(t_stack *stack, int argc, char **argv)
 	stack->size = 0;
 	while (--i > 0)
 	{
+		if (!is_int(argv[i]))
+		{
+			ft_putstr_fd("Error\n", 2);
+			exit(0);
+		}
 		ft_push(stack, ft_atoi(argv[i]));
 	}
 	ft_print_stack(stack);
