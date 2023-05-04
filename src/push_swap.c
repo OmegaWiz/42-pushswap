@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 23:35:28 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/04 14:29:51 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/04 14:37:01 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,19 @@ void	ft_push_swap(t_stack *sa, t_stack *sb, long bucket)
 	}
 }
 
+void	ft_push_swap_small(t_stack *sa, t_stack *sb)
+{
+	if (sa->size == 2)
+		ft_push_swap_2(sa);
+	if (sa->size == 3)
+		ft_push_swap_3(sa);
+	if (sa->size == 4)
+		ft_push_swap_4(sa, sb);
+	if (sa->size == 5)
+		ft_push_swap_5(sa, sb);
+	exit(0);
+}
+
 int	main(int argc, char **argv)
 {
 	t_stack	sa;
@@ -50,12 +63,8 @@ int	main(int argc, char **argv)
 	ft_init_stack(&sa, argc, argv);
 	ft_init_stack(&sb, 0, NULL);
 	n = 1;
-	if (sa.size == 3)
-		ft_push_swap_3(&sa);
-	else if (sa.size == 5)
-		ft_push_swap_5(&sa, &sb, ft_stack5_mid(&sa));
-	if (sa.size == 3 || sa.size == 5)
-		return (0);
+	if (sa.size <= 5)
+		ft_push_swap_small(&sa, &sb);
 	while (is_sorted(&sa) == 0)
 	{
 		ft_push_swap(&sa, &sb, n);

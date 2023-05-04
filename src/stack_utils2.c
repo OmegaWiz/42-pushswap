@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 13:56:10 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/04 14:26:31 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/04 14:34:06 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,6 @@ void	ft_push_back(t_stack *sa, t_stack *sb)
 		ft_pop(sb);
 		ft_putstr_fd("pa\n", 1);
 	}
-	ft_print_stack(sa);
-	ft_print_stack(sb);
 }
 
 int	is_sorted(t_stack *stack)
