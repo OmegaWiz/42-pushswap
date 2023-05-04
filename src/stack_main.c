@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 00:03:38 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/04/30 22:46:01 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/03 17:58:07 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,10 @@
 void	ft_init_stack(t_stack *stack, int argc, char **argv)
 {
 	int	i;
-	int n;
 
 	i = argc;
-	stack->top = (t_node *) malloc(sizeof(t_node));
-	stack->bottom = (t_node *) malloc(sizeof(t_node));
+	stack->top = (t_node *) malloc_and_check(sizeof(t_node));
+	stack->bottom = (t_node *) malloc_and_check(sizeof(t_node));
 	stack->top->next = stack->bottom;
 	stack->bottom->prev = stack->top;
 	stack->top->prev = NULL;
@@ -44,7 +43,7 @@ void	ft_push(t_stack *stack, long data)
 {
 	t_node	*new;
 
-	new = (t_node *) malloc(sizeof(t_node));
+	new = (t_node *) malloc_and_check(sizeof(t_node));
 	new->data = data;
 	new->next = stack->top->next;
 	new->prev = stack->top;

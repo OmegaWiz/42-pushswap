@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 23:36:09 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/04/30 23:14:28 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/03 17:52:11 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ struct s_node
 	struct s_node	*next;
 	struct s_node	*prev;
 };
-typedef struct s_node t_node;
+typedef struct s_node	t_node;
 
 struct s_stack
 {
@@ -37,8 +37,11 @@ struct s_stack
 	t_node	*bottom;
 	int		size;
 };
-typedef struct s_stack t_stack;
+typedef struct s_stack	t_stack;
 
+void	*malloc_check(void *ptr);
+void	*malloc_and_check(size_t size);
+char	**arg_format(char **argv);
 int		is_int(const char *nbr);
 int		is_duplicate(t_stack *stack);
 long	ft_atol(const char *nbr);

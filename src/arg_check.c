@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 17:53:10 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/04/30 22:04:15 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/02 09:48:30 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	is_space(char c)
 {
-	if (c == ' ' || c == '\t')
+	if (c == ' ')
 		return (1);
 	return (0);
 }
@@ -32,7 +32,7 @@ long	ft_atol(const char *nbr)
 		i++;
 	if (nbr[i] == '-' || nbr[i] == '+')
 		i++;
-	if (nbr[i-1] == '-')
+	if (nbr[i - 1] == '-')
 		is_neg = 1;
 	while (nbr[i])
 	{
@@ -46,7 +46,7 @@ long	ft_atol(const char *nbr)
 	return (res);
 }
 
-int		is_int_cont(const char *nbr, int i, int j, int is_number)
+int	is_int_cont(const char *nbr, int i, int j, int is_number)
 {
 	if (i - j > 10)
 		return (0);
@@ -63,7 +63,7 @@ int		is_int_cont(const char *nbr, int i, int j, int is_number)
 	return (1);
 }
 
-int		is_int(const char *nbr)
+int	is_int(const char *nbr)
 {
 	int	i;
 	int	j;
@@ -81,7 +81,7 @@ int		is_int(const char *nbr)
 		if (!ft_isdigit(nbr[i]))
 		{
 			if (is_space(nbr[i]))
-				break;
+				break ;
 			return (0);
 		}
 		if (ft_isdigit(nbr[i]))
