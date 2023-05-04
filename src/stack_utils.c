@@ -6,13 +6,13 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 13:56:01 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/04 17:36:03 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/04 18:30:38 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_init_stack(t_stack *stack, int argc, char **argv)
+void	ft_init_stack(t_stack *sa, t_stack *sb, int argc, char **argv)
 {
 	int	i;
 
@@ -66,7 +66,7 @@ void	ft_swap(t_stack *stack)
 {
 	t_node	*tmp;
 
-	if (stack->size <= 2)
+	if (stack->size < 2)
 		return ;
 	tmp = stack->top->next;
 	stack->top->next = tmp->next;
