@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 23:36:09 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/03 17:52:11 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/04 14:08:06 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,23 +39,44 @@ struct s_stack
 };
 typedef struct s_stack	t_stack;
 
-void	*malloc_check(void *ptr);
-void	*malloc_and_check(size_t size);
-char	**arg_format(char **argv);
+//	push_swap.c
+void	ft_push_swap(t_stack *sa, t_stack *sb, long bucket);
+
+//	arg_check.c
 int		is_int(const char *nbr);
 int		is_duplicate(t_stack *stack);
 long	ft_atol(const char *nbr);
+//
+
+//arg_format.c
+char	**arg_format(char **argv);
+
+//	malloc_utils.c
+void	*malloc_check(void *ptr);
+void	*malloc_and_check(size_t size);
+
+//	stack_utils.c
 void	ft_init_stack(t_stack *stack, int argc, char **argv);
 void	ft_push(t_stack *stack, long data);
 void	ft_pop(t_stack *stack);
 void	ft_swap(t_stack *stack);
 void	ft_rotate(t_stack *stack);
+//
+
+//	stack_utils2.c
 void	ft_reverse_rotate(t_stack *stack);
-long	ft_stack5_mid(t_stack *s);
-void	ft_push_swap_3(t_stack *stack);
-void	ft_push_swap_5(t_stack *sa, t_stack *sb, long mid);
-void	ft_push_swap(t_stack *sa, t_stack *sb, long bucket);
 void	ft_print_stack(t_stack *stack);
+void	ft_push_back(t_stack *sa, t_stack *sb);
 int		is_sorted(t_stack *stack);
+//
+
+//	sort2.c
+//	sort3.c
+void	ft_push_swap_3(t_stack *stack);
+
+//	sort4.c
+//	sort5.c
+long	ft_stack5_mid(t_stack *s);
+void	ft_push_swap_5(t_stack *sa, t_stack *sb, long mid);
 
 #endif

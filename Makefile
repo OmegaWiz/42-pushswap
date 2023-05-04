@@ -6,13 +6,15 @@
 #    By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/05 10:18:10 by kkaiyawo          #+#    #+#              #
-#    Updated: 2023/05/04 13:51:16 by kkaiyawo         ###   ########.fr        #
+#    Updated: 2023/05/04 14:07:22 by kkaiyawo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			=	push_swap
 
-SRCS			=	push_swap.c stack_main.c stack_utils.c arg_check.c mini_push_swap.c arg_format.c malloc_check.c
+SRCS			=	push_swap.c arg_check.c arg_format.c malloc_utils.c \
+					stack_utils.c stack_utils2.c sort2.c sort3.c sort4.c \
+					sort5.c
 LIBS			=	libft/libft.a
 
 SRC_DIR			=	./src/

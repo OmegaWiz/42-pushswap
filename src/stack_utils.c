@@ -5,56 +5,90 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/30 00:03:40 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/01 13:14:59 by kkaiyawo         ###   ########.fr       */
+/*   Created: 2023/05/04 13:56:01 by kkaiyawo          #+#    #+#             */
+/*   Updated: 2023/05/04 13:56:02 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_reverse_rotate(t_stack *stack)
+void	ft_init_stack(t_stack *stack, int argc, char **argv)
+{
+	int	i;
+
+	i = argc;
+	stack->top = (t_node *) malloc_and_check(sizeof(t_node));
+	stack->bottom = (t_node *) malloc_and_check(sizeof(t_node));
+	stack->top->next = stack->bottom;
+	stack->bottom->prev = stack->top;
+	stack->top->prev = NULL;
+	stack->bottom->next = NULL;
+	stack->size = 0;
+	while (--i > 0)
+	{
+		if (is_int(argv[i]) == 0)
+			ft_putstr_fd("Error\n", 2);
+		if (is_int(argv[i]) == 0)
+			exit(0);
+		ft_push(stack, ft_atol(argv[i]) + INT_MAX + 1);
+	}
+	if (is_duplicate(stack) == 1)
+		ft_putstr_fd("Error\n", 2);
+	if (is_duplicate(stack) == 1)
+		exit(0);
+	ft_print_stack(stack);
+}
+
+void	ft_push(t_stack *stack, long data)
+{
+	t_node	*new;
+
+	new = (t_node *) malloc_and_check(sizeof(t_node));
+	new->data = data;
+	new->next = stack->top->next;
+	new->prev = stack->top;
+	stack->top->next->prev = new;
+	stack->top->next = new;
+	stack->size++;
+}
+
+void	ft_pop(t_stack *stack)
+{
+	t_node	*tmp;
+
+	tmp = stack->top->next;
+	stack->top->next = tmp->next;
+	tmp->next->prev = stack->top;
+	free(tmp);
+	stack->size--;
+}
+
+void	ft_swap(t_stack *stack)
+{
+	t_node	*tmp;
+
+	if (stack->size <= 2)
+		return ;
+	tmp = stack->top->next;
+	stack->top->next = tmp->next;
+	tmp->next->prev = stack->top;
+	tmp->next = stack->top->next->next;
+	tmp->prev = stack->top->next;
+	stack->top->next->next->prev = tmp;
+	stack->top->next->next = tmp;
+}
+
+void	ft_rotate(t_stack *stack)
 {
 	t_node	*tmp;
 
 	if (stack->size <= 1)
 		return ;
-	tmp = stack->bottom->prev;
-	stack->bottom->prev = tmp->prev;
-	tmp->prev->next = stack->bottom;
-	tmp->next = stack->top->next;
-	tmp->prev = stack->top;
-	stack->top->next->prev = tmp;
-	stack->top->next = tmp;
-}
-
-void	ft_print_stack(t_stack *stack)
-{
-	t_node	*tmp;
-
 	tmp = stack->top->next;
-	if (DEBUG == 0)
-		return ;
-	while (tmp != stack->bottom)
-	{
-		ft_putnbr_fd(tmp->data + INT_MIN, 1);
-		ft_putchar_fd(' ', 1);
-		tmp = tmp->next;
-	}
-	ft_putchar_fd('\n', 1);
-}
-
-int	is_sorted(t_stack *stack)
-{
-	t_node	*tmp;
-
-	tmp = stack->top->next;
-	if (stack->size == 1)
-		return (1);
-	while (tmp->next != stack->bottom)
-	{
-		if (tmp->data > tmp->next->data)
-			return (0);
-		tmp = tmp->next;
-	}
-	return (1);
+	stack->top->next = tmp->next;
+	tmp->next->prev = stack->top;
+	tmp->next = stack->bottom;
+	tmp->prev = stack->bottom->prev;
+	stack->bottom->prev->next = tmp;
+	stack->bottom->prev = tmp;
 }
