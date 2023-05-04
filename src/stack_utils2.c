@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 13:56:10 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/04 14:34:06 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/04 16:25:42 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ void	ft_print_stack(t_stack *sa, t_stack *sb)
 	if (DEBUG == 0)
 		return ;
 	tmp = sa->top->next;
-	ft_putstr_fd("sa | ")
-	while (tmp != stack->bottom)
+	ft_putstr_fd("sa | ", 1);
+	while (tmp != sa->bottom)
 	{
 		ft_putnbr_fd(tmp->data + INT_MIN, 1);
 		ft_putchar_fd(' ', 1);
@@ -43,8 +43,8 @@ void	ft_print_stack(t_stack *sa, t_stack *sb)
 	}
 	ft_putchar_fd('\n', 1);
 	tmp = sb->top->next;
-	ft_putstr_fd("sb | ")
-	while (tmp != stack->bottom)
+	ft_putstr_fd("sb | ", 1);
+	while (tmp != sb->bottom)
 	{
 		ft_putnbr_fd(tmp->data + INT_MIN, 1);
 		ft_putchar_fd(' ', 1);

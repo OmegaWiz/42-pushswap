@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 14:18:37 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/04 15:52:49 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/04 16:26:42 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ long	ft_stack_max(t_stack *s)
 			mx = tmp->data;
 		tmp = tmp->next;
 	}
-	return (mx1);
+	return (mx);
 }
 
 void	ft_push_swap_4_cont(t_stack *sa, t_stack *sb)

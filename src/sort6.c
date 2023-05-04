@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 16:04:52 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/04 16:08:36 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/04 16:40:14 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	ft_push_swap_6_cont(t_stack *sa, t_stack *sb)
 {
 	int	i;
+
 	ft_push_swap_3(sa);
 	ft_push_swap_3_rev(sb);
 	i = 0;

@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 16:05:42 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/04 16:13:30 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/04 16:40:09 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	ft_push_swap_10_cont(t_stack *sa, t_stack *sb)
 {
 	int	i;
+
 	ft_push_swap_5(sa, sb);
 	ft_push_swap_5_rev(sa, sb);
 	i = 0;
@@ -52,5 +53,5 @@ void	ft_push_swap_10(t_stack *sa, t_stack *sb)
 			ft_print_stack(sa, sb);
 		}
 	}
-	ft_push_swap_5_cont(sa, sb);
+	ft_push_swap_10_cont(sa, sb);
 }

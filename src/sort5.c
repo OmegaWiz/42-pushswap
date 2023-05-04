@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 14:01:24 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/04 15:57:37 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/04 16:27:00 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_push_swap_5_cont(t_stack *sa, t_stack *sb)
 {
 	ft_push_swap_3(sa);
-	ft_push_swap_2_rev(sb)
+	ft_push_swap_2_rev(sb);
 	ft_push(sa, sb->top->next->data);
 	ft_pop(sb);
 	ft_putstr_fd("pa\n", 1);
@@ -57,7 +57,7 @@ void	ft_push_swap_5(t_stack *sa, t_stack *sb)
 void	ft_push_swap_5_rev_cont(t_stack *sa, t_stack *sb)
 {
 	ft_push_swap_3_rev(sb);
-	ft_push_swap_2(sa)
+	ft_push_swap_2(sa);
 	ft_push(sb, sa->top->next->data);
 	ft_pop(sa);
 	ft_putstr_fd("pb\n", 1);
