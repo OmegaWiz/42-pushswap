@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 13:56:10 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/04 16:25:42 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/04 17:50:16 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,20 +61,4 @@ void	ft_push_back(t_stack *sa, t_stack *sb)
 		ft_pop(sb);
 		ft_putstr_fd("pa\n", 1);
 	}
-}
-
-int	is_sorted(t_stack *stack)
-{
-	t_node	*tmp;
-
-	tmp = stack->top->next;
-	if (stack->size == 1)
-		return (1);
-	while (tmp->next != stack->bottom)
-	{
-		if (tmp->data > tmp->next->data)
-			return (0);
-		tmp = tmp->next;
-	}
-	return (1);
 }

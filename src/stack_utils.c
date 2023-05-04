@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 13:56:01 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/04 16:24:20 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/04 17:36:03 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_init_stack(t_stack *stack, int argc, char **argv)
 	stack->top->prev = NULL;
 	stack->bottom->next = NULL;
 	stack->size = 0;
-	while (--i > 0)
+	while (--i >= 0 && argv[i])
 	{
 		if (is_int(argv[i]) == 0)
 			ft_putstr_fd("Error\n", 2);

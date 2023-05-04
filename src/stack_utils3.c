@@ -1,41 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort2.c                                            :+:      :+:    :+:   */
+/*   stack_utils3.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/04 14:07:49 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/04 17:43:26 by kkaiyawo         ###   ########.fr       */
+/*   Created: 2023/05/04 17:49:48 by kkaiyawo          #+#    #+#             */
+/*   Updated: 2023/05/04 17:50:30 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_push_swap_2(t_stack *sa)
+int	is_sorted(t_stack *stack)
 {
-	long	a;
-	long	b;
+	t_node	*tmp;
 
-	a = sa->top->next->data;
-	b = sa->top->next->next->data;
-	if (a > b)
+	tmp = stack->top->next;
+	if (stack->size == 1)
+		return (1);
+	while (tmp->next != stack->bottom)
 	{
-		ft_swap(sa);
-		ft_putstr_fd("sa\n", 1);
+		if (tmp->data > tmp->next->data)
+			return (0);
+		tmp = tmp->next;
 	}
+	return (1);
 }
 
-void	ft_push_swap_2_rev(t_stack *sb)
+int	is_sorted_rev(t_stack *stack)
 {
-	long	a;
-	long	b;
+	t_node	*tmp;
 
-	a = sb->top->next->data;
-	b = sb->top->next->next->data;
-	if (a < b)
+	tmp = stack->top->next;
+	if (stack->size == 1)
+		return (1);
+	while (tmp->next != stack->bottom)
 	{
-		ft_swap(sb);
-		ft_putstr_fd("sb\n", 1);
+		if (tmp->data < tmp->next->data)
+			return (0);
+		tmp = tmp->next;
 	}
+	return (1);
 }

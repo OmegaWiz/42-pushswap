@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 23:35:28 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/04 16:24:44 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/04 17:12:34 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ int	main(int argc, char **argv)
 	if (argc == 1)
 		return (0);
 	arg = arg_format(argv);
-	ft_init_stack(&sa, argc, argv);
+	ft_init_stack(&sa, arg_count(arg), arg);
 	ft_init_stack(&sb, 0, NULL);
 	ft_print_stack(&sa, &sb);
 	n = 1;

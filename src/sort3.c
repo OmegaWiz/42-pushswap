@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 14:01:18 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/04 15:51:31 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/04 17:51:39 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ void	ft_push_swap_3_rev(t_stack *sb)
 	a = sb->top->next->data;
 	b = sb->top->next->next->data;
 	c = sb->top->next->next->next->data;
-	if (is_sorted(sb))
+	if (is_sorted_rev(sb))
 		return ;
 	if (a > b && b < c && a > c)
 	{

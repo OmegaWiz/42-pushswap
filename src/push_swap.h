@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 23:36:09 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/04 16:26:20 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/04 17:52:53 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ long	ft_atol(const char *nbr);
 
 //arg_format.c
 char	**arg_format(char **argv);
+int		arg_count(char **arg);
 
 //	malloc_utils.c
 void	*malloc_check(void *ptr);
@@ -68,8 +69,10 @@ void	ft_rotate(t_stack *stack);
 void	ft_reverse_rotate(t_stack *stack);
 void	ft_print_stack(t_stack *sa, t_stack *sb);
 void	ft_push_back(t_stack *sa, t_stack *sb);
+
+//	stack_utils3.c
 int		is_sorted(t_stack *stack);
-//
+int		is_sorted_rev(t_stack *stack);
 
 //	find_mid.c
 long	find_mid(t_stack *s, int n);

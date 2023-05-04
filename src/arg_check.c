@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 17:53:10 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/02 09:48:30 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/04 17:42:01 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,11 @@ long	ft_atol(const char *nbr)
 	while (is_space(nbr[i]))
 		i++;
 	if (nbr[i] == '-' || nbr[i] == '+')
+	{
 		i++;
-	if (nbr[i - 1] == '-')
-		is_neg = 1;
+		if (nbr[i - 1] == '-')
+			is_neg = 1;
+	}
 	while (nbr[i])
 	{
 		if (!ft_isdigit(nbr[i]))
@@ -84,7 +86,7 @@ int	is_int(const char *nbr)
 				break ;
 			return (0);
 		}
-		if (ft_isdigit(nbr[i]))
+		else
 			is_number = 1;
 		i++;
 	}

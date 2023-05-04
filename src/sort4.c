@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 14:18:37 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/04 16:26:42 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/04 17:52:02 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void	ft_push_swap_4_rev(t_stack *sa, t_stack *sb)
 	int		i;
 	long	mx;
 
-	if (is_sorted(sb))
+	if (is_sorted_rev(sb))
 		return ;
 	i = -1;
 	mx = ft_stack_max(sb);

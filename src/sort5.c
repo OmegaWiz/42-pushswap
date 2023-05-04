@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 14:01:24 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/04 16:27:00 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/04 17:52:12 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void	ft_push_swap_5_rev(t_stack *sa, t_stack *sb)
 	int		i;
 	long	mid;
 
-	if (is_sorted(sb))
+	if (is_sorted_rev(sb))
 		return ;
 	mid = find_mid(sb, 5);
 	i = -1;
