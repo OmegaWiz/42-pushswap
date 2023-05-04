@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 23:36:09 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/04 14:08:06 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/04 14:17:41 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,8 @@ int		is_sorted(t_stack *stack);
 //
 
 //	sort2.c
+void	ft_push_swap_2(t_stack *stack);
+
 //	sort3.c
 void	ft_push_swap_3(t_stack *stack);
 
