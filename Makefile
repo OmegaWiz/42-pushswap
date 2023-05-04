@@ -6,7 +6,7 @@
 #    By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/05 10:18:10 by kkaiyawo          #+#    #+#              #
-#    Updated: 2023/05/04 14:07:22 by kkaiyawo         ###   ########.fr        #
+#    Updated: 2023/05/04 15:15:28 by kkaiyawo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME			=	push_swap
 
 SRCS			=	push_swap.c arg_check.c arg_format.c malloc_utils.c \
 					stack_utils.c stack_utils2.c sort2.c sort3.c sort4.c \
-					sort5.c
+					sort5.c find_mid.c
 LIBS			=	libft/libft.a
 
 SRC_DIR			=	./src/

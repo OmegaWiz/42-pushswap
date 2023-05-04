@@ -6,39 +6,11 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 14:01:24 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/04 14:30:50 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/04 15:37:22 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-long	ft_stack5_mid(t_stack *s)
-{
-	t_node	*tmp;
-	long	mx1;
-	long	mx2;
-	long	mx3;
-
-	tmp = s->top->next;
-	mx1 = INT_MIN;
-	mx2 = INT_MIN;
-	mx3 = INT_MIN;
-	while (tmp != s->bottom)
-	{
-		if (tmp->data > mx1)
-			mx1 = tmp->data;
-		if (tmp->data > mx2)
-			mx1 = mx2;
-		if (tmp->data > mx2)
-			mx2 = tmp->data;
-		if (tmp->data > mx3)
-			mx2 = mx3;
-		if (tmp->data > mx3)
-			mx3 = tmp->data;
-		tmp = tmp->next;
-	}
-	return (mx1);
-}
 
 void	ft_push_swap_5_cont(t_stack *sa, t_stack *sb)
 {
@@ -59,12 +31,14 @@ void	ft_push_swap_5_cont(t_stack *sa, t_stack *sb)
 	ft_print_stack(sa, sb);
 }
 
-void	ft_push_swap_5(t_stack *sa, t_stack *sb, long mid)
+void	ft_push_swap_5(t_stack *sa, t_stack *sb)
 {
 	int	i;
+	long	mid;
 
 	if (is_sorted(sa))
 		return ;
+	mid = find_mid(sa, 5);
 	i = -1;
 	while (++i < 5)
 	{

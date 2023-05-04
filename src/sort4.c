@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 14:18:37 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/04 14:27:23 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/04 14:57:33 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	ft_push_swap_4(t_stack *sa, t_stack *sb)
 		return ;
 	i = -1;
 	mx = ft_stack_max(sa);
-	while (++i < 5)
+	while (++i < 4)
 	{
 		if (sa->top->next->data >= mx)
 		{
