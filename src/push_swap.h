@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 23:36:09 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/04 15:57:55 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/04 16:06:53 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,5 +89,20 @@ void	ft_push_swap_4_rev(t_stack *sa, t_stack *sb);
 //	sort5.c
 void	ft_push_swap_5(t_stack *sa, t_stack *sb);
 void	ft_push_swap_5_rev(t_stack *sa, t_stack *sb);
+
+//	sort6.c
+void	ft_push_swap_6(t_stack *sa, t_stack *sb);
+
+//	sort7.c
+void	ft_push_swap_7(t_stack *sa, t_stack *sb);
+
+//	sort8.c
+void	ft_push_swap_8(t_stack *sa, t_stack *sb);
+
+//	sort9.c
+void	ft_push_swap_9(t_stack *sa, t_stack *sb);
+
+//	sort10.c
+void	ft_push_swap_10(t_stack *sa, t_stack *sb);
 
 #endif

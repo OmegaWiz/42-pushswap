@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 23:35:28 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/04 14:37:01 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/04 16:20:17 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,16 @@ void	ft_push_swap_small(t_stack *sa, t_stack *sb)
 		ft_push_swap_4(sa, sb);
 	if (sa->size == 5)
 		ft_push_swap_5(sa, sb);
+	if (sa->size == 6)
+		ft_push_swap_6(sa, sb);
+	if (sa->size == 7)
+		ft_push_swap_7(sa, sb);
+	if (sa->size == 8)
+		ft_push_swap_8(sa, sb);
+	if (sa->size == 9)
+		ft_push_swap_9(sa, sb);
+	if (sa->size == 10)
+		ft_push_swap_10(sa, sb);
 	exit(0);
 }
 
@@ -63,7 +73,7 @@ int	main(int argc, char **argv)
 	ft_init_stack(&sa, argc, argv);
 	ft_init_stack(&sb, 0, NULL);
 	n = 1;
-	if (sa.size <= 5)
+	if (sa.size <= 10)
 		ft_push_swap_small(&sa, &sb);
 	while (is_sorted(&sa) == 0)
 	{
