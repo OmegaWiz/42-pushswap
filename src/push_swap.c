@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 23:35:28 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/04 14:00:52 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/04 14:29:51 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,13 @@ void	ft_push_swap(t_stack *sa, t_stack *sb, long bucket)
 			ft_push(sb, sa->top->next->data);
 			ft_pop(sa);
 			ft_putstr_fd("pb\n", 1);
-			ft_print_stack(sa);
-			ft_print_stack(sb);
+			ft_print_stack(sa, sb);
 		}
 		else
 		{
 			ft_rotate(sa);
 			ft_putstr_fd("ra\n", 1);
-			ft_print_stack(sa);
-			ft_print_stack(sb);
+			ft_print_stack(sa, sb);
 		}
 	}
 }

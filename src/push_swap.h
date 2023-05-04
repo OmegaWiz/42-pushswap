@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 23:36:09 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/04 14:17:41 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/04 14:27:40 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	ft_rotate(t_stack *stack);
 
 //	stack_utils2.c
 void	ft_reverse_rotate(t_stack *stack);
-void	ft_print_stack(t_stack *stack);
+void	ft_print_stack(t_stack *sa, t_stack *sb);
 void	ft_push_back(t_stack *sa, t_stack *sb);
 int		is_sorted(t_stack *stack);
 //
@@ -77,8 +77,9 @@ void	ft_push_swap_2(t_stack *stack);
 void	ft_push_swap_3(t_stack *stack);
 
 //	sort4.c
+void	ft_push_swap_4(t_stack *sa, t_stack *sb);
+
 //	sort5.c
-long	ft_stack5_mid(t_stack *s);
-void	ft_push_swap_5(t_stack *sa, t_stack *sb, long mid);
+void	ft_push_swap_5(t_stack *sa, t_stack *sb);
 
 #endif

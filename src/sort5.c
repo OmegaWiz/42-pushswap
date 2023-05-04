@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 14:01:24 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/04 14:02:01 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/04 14:30:50 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,19 +47,16 @@ void	ft_push_swap_5_cont(t_stack *sa, t_stack *sb)
 	{
 		ft_swap(sb);
 		ft_putstr_fd("sb\n", 1);
-		ft_print_stack(sa);
-		ft_print_stack(sb);
+		ft_print_stack(sa, sb);
 	}
 	ft_push(sa, sb->top->next->data);
 	ft_pop(sb);
 	ft_putstr_fd("pa\n", 1);
-	ft_print_stack(sa);
-	ft_print_stack(sb);
+	ft_print_stack(sa, sb);
 	ft_push(sa, sb->top->next->data);
 	ft_pop(sb);
 	ft_putstr_fd("pa\n", 1);
-	ft_print_stack(sa);
-	ft_print_stack(sb);
+	ft_print_stack(sa, sb);
 }
 
 void	ft_push_swap_5(t_stack *sa, t_stack *sb, long mid)
@@ -76,15 +73,13 @@ void	ft_push_swap_5(t_stack *sa, t_stack *sb, long mid)
 			ft_push(sb, sa->top->next->data);
 			ft_pop(sa);
 			ft_putstr_fd("pb\n", 1);
-			ft_print_stack(sa);
-			ft_print_stack(sb);
+			ft_print_stack(sa, sb);
 		}
 		else
 		{
 			ft_rotate(sa);
 			ft_putstr_fd("ra\n", 1);
-			ft_print_stack(sa);
-			ft_print_stack(sb);
+			ft_print_stack(sa, sb);
 		}
 	}
 	ft_push_swap_5_cont(sa, sb);
