@@ -1,4 +1,4 @@
 .DS_Store
-./build/*
-./push_swap
-./*.a
+build/*
+push_swap
+*.a

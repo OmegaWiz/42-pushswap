@@ -15,7 +15,7 @@ NAME			=	push_swap
 SRCS			=	push_swap.c arg_check.c arg_format.c malloc_utils.c \
 					stack_utils.c stack_utils2.c sort2.c sort3.c sort4.c \
 					sort5.c sort6.c sort7.c sort8.c sort9.c sort10.c \
-					find_mid.c stack_utils3.c
+					stack_utils3.c
 LIBS			=	libft/libft.a
 
 SRC_DIR			=	./src/

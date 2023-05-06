@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 14:07:49 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/06 15:14:01 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/06 18:22:19 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	ft_push_swap_2(t_node *sa)
 		ft_swap(sa);
 		ft_putstr_fd("sa\n", 1);
 	}
+	ft_print_stack2(sa, NULL);
 }
 
 void	ft_push_swap_2_rev(t_node *sb)
@@ -28,4 +29,5 @@ void	ft_push_swap_2_rev(t_node *sb)
 		ft_swap(sb);
 		ft_putstr_fd("sb\n", 1);
 	}
+	ft_print_stack2(NULL, sb);
 }

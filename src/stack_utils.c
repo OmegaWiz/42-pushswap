@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 13:56:01 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/06 17:42:55 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/06 18:14:13by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,23 @@
 void	ft_init_stack(t_stack *stack, char **arg)
 {
 	ssize_t	i;
+	long	data;
 
 	i = -1;
 	while (arg[++i])
 	{
 		if (is_int(arg[i]))
-			ft_push_back(stack->a_top, ft_atol(arg[i]) + INT_MAX + 1);
+		{
+			data = ft_atol(arg[i]) + INT_MAX + 1;
+			stack->a_top = ft_push_front(stack->a_top, data);
+		}
 		else
 			free_exit(arg, stack, 255);
 	}
-	if (is_duplicate(stack->a_top) || ft_stack_size(stack->a_top) + 1 != i)
+	if (ft_stack_size(stack->a_top) != i)
 		free_exit(arg, stack, 255);
-	stack->b_top = NULL;
+	if (is_duplicate(stack->a_top))
+		free_exit(arg, stack, 255);
 	free_all(arg, NULL);
 }
 
