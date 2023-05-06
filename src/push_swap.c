@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 23:35:28 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/06 10:21:54 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/06 10:37:11 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,7 @@ void	ft_push_swap_small(t_stack *sa, t_stack *sb)
 
 int	main(int argc, char **argv)
 {
-	t_stack	sa;
-	t_stack	sb;
+	t_stack	stack;
 	size_t	n;
 	char	**arg;
 

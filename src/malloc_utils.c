@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 13:54:24 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/06 10:35:59 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/06 10:39:07 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,10 @@ void	*malloc_and_check(size_t size)
 	return (ptr);
 }
 
-void	free_all(char **arg, t_stack *a, t_stack *b)
+void	free_all(char **arg, t_stack *stack)
 {
-	int	i;
+	int		i;
+	t_node	*tmp;
 
 	i = -1;
 	while (arg[++i])
@@ -45,22 +46,22 @@ void	free_all(char **arg, t_stack *a, t_stack *b)
 		free(arg[i]);
 	}
 	free(arg);
-	while (a->top->next != a->bottom)
-		ft_pop(a);
-	if (a->top)
-		free(a->top);
-	if (a->bottom)
-		free(a->bottom);
-	while (b->top->next != b->bottom)
-		ft_pop(b);
-	if (b->top)
-		free(b->top);
-	if (b->bottom)
-		free(b->bottom);
+	while (stack->a_top != NULL)
+	{
+		tmp = stack->a_top;
+		stack->a_top = stack->a_top->next;
+		free(tmp);
+	}
+	while (stack->b_top != NULL)
+	{
+		tmp = stack->b_top;
+		stack->b_top = stack->b_top->next;
+		free(tmp);
+	}
 }
 
-void	free_exit(char **arg, t_stack *a, t_stack *b)
+void	free_exit(char **arg, t_stack *stack)
 {
-	free_all(arg, a, b);
+	free_all(arg, stack);
 	exit(ENOMEM);
 }
