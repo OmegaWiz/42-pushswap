@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 16:05:42 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/04 16:40:09 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/06 16:44:05 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,9 @@ void	ft_push_swap_10_cont(t_stack *sa, t_stack *sb)
 	i = 0;
 	while (++i <= 5)
 	{
-		ft_push(sa, sb->top->next->data);
-		ft_pop(sb);
+		ft_push(sb, sa);
 		ft_putstr_fd("pa\n", 1);
-		ft_print_stack(sa, sb);
+		ft_print_stack2(sa, sb);
 	}
 }
 
@@ -35,22 +34,21 @@ void	ft_push_swap_10(t_stack *sa, t_stack *sb)
 
 	if (is_sorted(sa))
 		return ;
-	mid = find_mid(sa, 10);
+	mid = ft_stack_size(sa) / 2;
 	i = -1;
 	while (++i < 10)
 	{
-		if (sa->top->next->data < mid)
+		if (sa->index < mid)
 		{
-			ft_push(sb, sa->top->next->data);
-			ft_pop(sa);
+			ft_push(sa, sb);
 			ft_putstr_fd("pb\n", 1);
-			ft_print_stack(sa, sb);
+			ft_print_stack2(sa, sb);
 		}
 		else
 		{
 			ft_rotate(sa);
 			ft_putstr_fd("ra\n", 1);
-			ft_print_stack(sa, sb);
+			ft_print_stack2(sa, sb);
 		}
 	}
 	ft_push_swap_10_cont(sa, sb);
