@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 13:56:01 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/06 13:54:15 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/06 14:53:56 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,32 +53,47 @@ void	ft_swap(t_node *stack)
 	stack = tmp;
 }
 
-void	ft_swap(t_stack *stack)
+void	ft_rotate(t_node *stack)
 {
 	t_node	*tmp;
+	t_node	*ptr;
 
-	if (stack->size < 2)
+	if (ft_stack_size(stack) < 2)
 		return ;
-	tmp = stack->top->next;
-	stack->top->next = tmp->next;
-	tmp->next->prev = stack->top;
-	tmp->next = stack->top->next->next;
-	tmp->prev = stack->top->next;
-	stack->top->next->next->prev = tmp;
-	stack->top->next->next = tmp;
+	if (ft_stack_size(stack) == 2)
+	{
+		ft_swap(stack);
+		return ;
+	}
+	tmp = stack;
+	stack = stack->next;
+	tmp->next = NULL;
+	ptr = stack;
+	while (ptr->next != NULL)
+		ptr = ptr->next;
+	ptr->next = tmp;
 }
 
-void	ft_rotate(t_stack *stack)
+void	ft_reverse_rotate(t_node *stack)
 {
 	t_node	*tmp;
+	t_node	*ptr;
 
-	if (stack->size <= 1)
+	if (ft_stack_size(stack) < 2)
 		return ;
-	tmp = stack->top->next;
-	stack->top->next = tmp->next;
-	tmp->next->prev = stack->top;
-	tmp->next = stack->bottom;
-	tmp->prev = stack->bottom->prev;
-	stack->bottom->prev->next = tmp;
-	stack->bottom->prev = tmp;
+	if (ft_stack_size(stack) == 2)
+	{
+		ft_swap(stack);
+		return ;
+	}
+	tmp = stack;
+	ptr = stack->next;
+	while (ptr->next != NULL)
+	{
+		tmp = tmp->next;
+		ptr = ptr->next;
+	}
+	tmp->next = NULL;
+	ptr->next = stack;
+	stack = ptr;
 }
