@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 13:54:24 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/06 17:10:38 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/06 17:45:21 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ char	*ft_strappend(char *s1, char *s2)
 	ft_strlcpy(new, s1, ft_strlen(s1) + 1);
 	ft_strlcat(new, s2, ft_strlen(s1) + ft_strlen(s2) + 1);
 	free(s1);
+	s1 = new;
 	return (new);
 }
 
@@ -52,11 +53,12 @@ void	free_all(char **arg, t_stack *stack)
 	t_node	*tmp;
 
 	i = -1;
-	if (arg)
+	if (arg != NULL)
 	{
-		while (arg[++i])
+		while (arg[++i] != NULL)
 			free(arg[i]);
 		free(arg);
+		arg = NULL;
 	}
 	if (stack == NULL)
 		return ;

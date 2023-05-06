@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 23:35:28 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/06 17:02:51 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/06 17:48:30 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,8 @@ int	main(int argc, char **argv)
 
 	if (argc == 1)
 		return (0);
+	stack.a_top = NULL;
+	stack.b_top = NULL;
 	arg = arg_format(argc, argv);
 	ft_init_stack(&stack, arg);
 	ft_print_stack(&stack);
@@ -89,6 +91,6 @@ int	main(int argc, char **argv)
 			n = n * 2;
 		}
 	}
-	free_all(arg, &stack);
+	free_all(NULL, &stack);
 	return (0);
 }

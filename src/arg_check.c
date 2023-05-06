@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 17:53:10 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/06 17:04:44 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/06 17:41:39 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,9 +60,7 @@ int	is_int_cont(const char *nbr, int i, int j, int is_number)
 			return (0);
 		i++;
 	}
-	if (!is_number)
-		return (0);
-	return (1);
+	return (is_number);
 }
 
 int	is_int(const char *nbr)
