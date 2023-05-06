@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 13:54:24 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/06 10:39:07 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/06 12:04:34 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,17 @@ void	*malloc_and_check(size_t size)
 		exit(ENOMEM);
 	}
 	return (ptr);
+}
+
+char	*ft_strappend(char *s1, char *s2)
+{
+	char	*new;
+
+	new = (char *) malloc_and_check((ft_strlen(s1) + ft_strlen(s2) + 1));
+	ft_strlcpy(new, s1, ft_strlen(s1) + 1);
+	ft_strlcat(new, s2, ft_strlen(s1) + ft_strlen(s2) + 1);
+	free(s1);
+	return (new);
 }
 
 void	free_all(char **arg, t_stack *stack)

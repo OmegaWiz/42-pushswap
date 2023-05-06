@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 23:36:09 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/06 10:39:43 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/06 12:04:51 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ int		arg_count(char **arg);
 //	malloc_utils.c
 void	*malloc_check(void *ptr);
 void	*malloc_and_check(size_t size);
+char	*ft_strappend(char *s1, char *s2);
 void	free_all(char **arg, t_stack *stack);
 void	free_exit(char **arg, t_stack *stack);
 

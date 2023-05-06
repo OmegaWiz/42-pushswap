@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 17:35:51 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/04 18:22:27 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/06 10:42:46 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ char	**arg_format(char **argv)
 		free(tmp);
 	}
 	arg = (char **) malloc_check(ft_split(line, ' '));
+	free(line);
 	return (arg);
 }
 
