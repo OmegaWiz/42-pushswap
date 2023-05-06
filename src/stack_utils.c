@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 13:56:01 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/06 13:52:24 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/06 13:54:15 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,18 @@ void	ft_push(t_node *s_from, t_node *s_to)
 	s_from = s_from->next;
 	tmp->next = s_to;
 	s_to = tmp;
+}
+
+void	ft_swap(t_node *stack)
+{
+	t_node	*tmp;
+
+	if (ft_stack_size(stack) < 2)
+		return ;
+	tmp = stack->next;
+	stack->next = tmp->next;
+	tmp->next = stack;
+	stack = tmp;
 }
 
 void	ft_swap(t_stack *stack)
