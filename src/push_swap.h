@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 23:36:09 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/06 16:48:06 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/06 16:58:24 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ struct s_stack
 typedef struct s_stack	t_stack;
 
 //	push_swap.c
-void	ft_push_swap(t_stack *sa, t_stack *sb, long bucket);
+void	ft_push_swap(t_node *sa, t_node *sb, long bucket);
 void	ft_push_swap_small(t_stack *stack);
 
 //	arg_check.c

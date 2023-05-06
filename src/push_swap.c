@@ -6,34 +6,38 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 23:35:28 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/06 15:12:29 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/06 17:00:12 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_push_swap(t_stack *sa, t_stack *sb, long bucket)
+void	ft_push_swap(t_node *sa, t_node *sb, long bucket)
 {
 	int	i;
 	int	n;
 
 	i = -1;
-	n = sa->size;
+	n = ft_stack_size(sa);
 	while (++i < n)
 	{
-		if (!(sa->top->next->data & bucket))
+		if (!(sa->index & bucket))
 		{
-			ft_push(sb, sa->top->next->data);
-			ft_pop(sa);
+			ft_push(sa, sb);
 			ft_putstr_fd("pb\n", 1);
-			ft_print_stack(sa, sb);
 		}
 		else
 		{
 			ft_rotate(sa);
 			ft_putstr_fd("ra\n", 1);
-			ft_print_stack(sa, sb);
 		}
+		ft_print_stack2(sa, sb);
+	}
+	while (ft_stack_size(sb) > 0)
+	{
+		ft_push(sb, sa);
+		ft_putstr_fd("pa\n", 1);
+		ft_print_stack2(sa, sb);
 	}
 }
 
@@ -78,11 +82,10 @@ int	main(int argc, char **argv)
 	{
 		while (is_sorted(&sa) == 0)
 		{
-			ft_push_swap(&sa, &sb, n);
-			ft_push_back(&sa, &sb);
+			ft_push_swap(stack.a_top, stack.b_top, n);
 			n = n * 2;
 		}
 	}
-	free_all(arg, sa, sb);
+	free_all(arg, &stack);
 	return (0);
 }
