@@ -2,3 +2,4 @@
 build/*
 push_swap
 *.a
+push_swap.dysM/*

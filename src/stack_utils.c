@@ -35,71 +35,71 @@ void	ft_init_stack(t_stack *stack, char **arg)
 	free_all(arg, NULL);
 }
 
-void	ft_push(t_node *s_from, t_node *s_to)
+void	ft_push(t_node **s_from, t_node **s_to)
 {
 	t_node	*tmp;
 
-	if (ft_stack_size(s_from) == 0)
+	if (ft_stack_size(*s_from) == 0)
 		return ;
-	tmp = s_from;
-	s_from = s_from->next;
-	tmp->next = s_to;
-	s_to = tmp;
+	tmp = *s_from;
+	*s_from = (*s_from)->next;
+	tmp->next = *s_to;
+	*s_to = tmp;
 }
 
-void	ft_swap(t_node *stack)
+void	ft_swap(t_node **stack)
 {
 	t_node	*tmp;
 
-	if (ft_stack_size(stack) < 2)
+	if (ft_stack_size(*stack) < 2)
 		return ;
-	tmp = stack->next;
-	stack->next = tmp->next;
-	tmp->next = stack;
-	stack = tmp;
+	tmp = (*stack)->next;
+	(*stack)->next = tmp->next;
+	tmp->next = *stack;
+	*stack = tmp;
 }
 
-void	ft_rotate(t_node *stack)
+void	ft_rotate(t_node **stack)
 {
 	t_node	*tmp;
 	t_node	*ptr;
 
-	if (ft_stack_size(stack) < 2)
+	if (ft_stack_size(*stack) < 2)
 		return ;
-	if (ft_stack_size(stack) == 2)
+	if (ft_stack_size(*stack) == 2)
 	{
 		ft_swap(stack);
 		return ;
 	}
-	tmp = stack;
-	stack = stack->next;
+	tmp = *stack;
+	*stack = (*stack)->next;
 	tmp->next = NULL;
-	ptr = stack;
+	ptr = *stack;
 	while (ptr->next != NULL)
 		ptr = ptr->next;
 	ptr->next = tmp;
 }
 
-void	ft_reverse_rotate(t_node *stack)
+void	ft_reverse_rotate(t_node **stack)
 {
 	t_node	*tmp;
 	t_node	*ptr;
 
-	if (ft_stack_size(stack) < 2)
+	if (ft_stack_size(*stack) < 2)
 		return ;
-	if (ft_stack_size(stack) == 2)
+	if (ft_stack_size(*stack) == 2)
 	{
 		ft_swap(stack);
 		return ;
 	}
-	tmp = stack;
-	ptr = stack->next;
+	tmp = *stack;
+	ptr = (*stack)->next;
 	while (ptr->next != NULL)
 	{
 		tmp = tmp->next;
 		ptr = ptr->next;
 	}
 	tmp->next = NULL;
-	ptr->next = stack;
-	stack = ptr;
+	ptr->next = *stack;
+	*stack = ptr;
 }
