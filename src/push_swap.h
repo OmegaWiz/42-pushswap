@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 23:36:09 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/06 12:04:51 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/06 13:10:58 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ long	ft_atol(const char *nbr);
 //
 
 //arg_format.c
-char	**arg_format(char **argv);
+char	**arg_format(int argc, char **argv);
 int		arg_count(char **arg);
 
 //	malloc_utils.c

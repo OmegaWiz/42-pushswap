@@ -6,34 +6,23 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 17:35:51 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/06 10:42:46 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/06 13:10:52 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-char	**arg_format(char **argv)
+char	**arg_format(int argc, char **argv)
 {
-	char	**arg;
-	char	*tmp;
 	char	*line;
-	size_t	i;
 
-	i = 1;
-	line = (char *) malloc_check(ft_strdup(argv[i]));
-	tmp = line;
-	while (argv[++i])
+	line = "";
+	while (--argc)
 	{
-		tmp = line;
-		line = (char *) malloc_check(ft_strjoin(tmp, " "));
-		free(tmp);
-		tmp = line;
-		line = (char *) malloc_check(ft_strjoin(tmp, argv[i]));
-		free(tmp);
+		line = ft_strappend(line, argv[argc]);
+		line = ft_strappend(line, " ");
 	}
-	arg = (char **) malloc_check(ft_split(line, ' '));
-	free(line);
-	return (arg);
+	return (ft_split(line, ' '));
 }
 
 int	arg_count(char **arg)
