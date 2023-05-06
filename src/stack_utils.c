@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 13:56:01 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/06 13:26:35 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/06 13:51:12 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,18 @@ void	ft_init_stack(t_stack *stack, char **arg)
 	if (is_duplicate(stack->a_top) || ft_stack_size(stack->a_top) != i)
 		free_exit(stack, arg, ENOMEM);
 	free_all(arg, NULL);
+}
+
+void	ft_push(t_node *s_from, t_node *s_to)
+{
+	t_node	*tmp;
+
+	if (ft_stack_size(s_from) == 0)
+		return ;
+	tmp = s_from;
+	s_from = s_from->next;
+	tmp->next = s_to;
+	s_to = tmp;
 }
 
 void	ft_push(t_stack *stack, long data)
