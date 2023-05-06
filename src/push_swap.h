@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 23:36:09 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/06 15:00:10 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/06 15:10:40 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ typedef struct s_stack	t_stack;
 
 //	push_swap.c
 void	ft_push_swap(t_stack *sa, t_stack *sb, long bucket);
-void	ft_push_swap_small(t_stack *sa, t_stack *sb);
+void	ft_push_swap_small(t_stack *stack);
 
 //	arg_check.c
 int		is_int(const char *nbr);
@@ -83,34 +83,34 @@ int		is_sorted_rev(t_node *stack);
 long	find_mid(t_stack *s, int n);
 
 //	sort2.c
-void	ft_push_swap_2(t_stack *sa);
-void	ft_push_swap_2_rev(t_stack *sa);
+void	ft_push_swap_2(t_node *sa);
+void	ft_push_swap_2_rev(t_node *sa);
 
 //	sort3.c
-void	ft_push_swap_3(t_stack *sa);
-void	ft_push_swap_3_rev(t_stack *sb);
+void	ft_push_swap_3(t_node *sa);
+void	ft_push_swap_3_rev(t_node *sb);
 
 //	sort4.c
-void	ft_push_swap_4(t_stack *sa, t_stack *sb);
-void	ft_push_swap_4_rev(t_stack *sa, t_stack *sb);
+void	ft_push_swap_4(t_node *sa, t_node *sb);
+void	ft_push_swap_4_rev(t_node *sa, t_node *sb);
 
 //	sort5.c
-void	ft_push_swap_5(t_stack *sa, t_stack *sb);
-void	ft_push_swap_5_rev(t_stack *sa, t_stack *sb);
+void	ft_push_swap_5(t_node *sa, t_node *sb);
+void	ft_push_swap_5_rev(t_node *sa, t_node *sb);
 
 //	sort6.c
-void	ft_push_swap_6(t_stack *sa, t_stack *sb);
+void	ft_push_swap_6(t_node *sa, t_node *sb);
 
 //	sort7.c
-void	ft_push_swap_7(t_stack *sa, t_stack *sb);
+void	ft_push_swap_7(t_node *sa, t_node *sb);
 
 //	sort8.c
-void	ft_push_swap_8(t_stack *sa, t_stack *sb);
+void	ft_push_swap_8(t_node *sa, t_node *sb);
 
 //	sort9.c
-void	ft_push_swap_9(t_stack *sa, t_stack *sb);
+void	ft_push_swap_9(t_node *sa, t_node *sb);
 
 //	sort10.c
-void	ft_push_swap_10(t_stack *sa, t_stack *sb);
+void	ft_push_swap_10(t_node *sa, t_node *sb);
 
 #endif
