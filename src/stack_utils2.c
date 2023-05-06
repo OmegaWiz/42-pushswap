@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 13:56:10 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/06 13:23:16 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/06 13:28:40 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,24 +27,24 @@ void	ft_reverse_rotate(t_stack *stack)
 	stack->top->next = tmp;
 }
 
-void	ft_print_stack(t_stack *sa, t_stack *sb)
+void	ft_print_stack(t_stack *stack)
 {
 	t_node	*tmp;
 
 	if (DEBUG == 0)
 		return ;
-	tmp = sa->top->next;
+	tmp = stack->a_top;
 	ft_putstr_fd("A | ", 1);
-	while (tmp != sa->bottom)
+	while (tmp)
 	{
 		ft_putnbr_fd(tmp->data + INT_MIN, 1);
 		ft_putchar_fd(' ', 1);
 		tmp = tmp->next;
 	}
 	ft_putchar_fd('\n', 1);
-	tmp = sb->top->next;
+	tmp = stack->b_top;
 	ft_putstr_fd("B | ", 1);
-	while (tmp != sb->bottom)
+	while (tmp)
 	{
 		ft_putnbr_fd(tmp->data + INT_MIN, 1);
 		ft_putchar_fd(' ', 1);

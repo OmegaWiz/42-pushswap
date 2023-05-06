@@ -6,37 +6,11 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 13:56:01 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/06 13:23:33 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/06 13:26:35 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	ft_init_stack(t_stack *sa, t_stack *sb, int argc, char **argv)
-{
-	int	i;
-
-	i = argc;
-	stack->top = (t_node *) malloc_and_check(sizeof(t_node));
-	stack->bottom = (t_node *) malloc_and_check(sizeof(t_node));
-	stack->top->next = stack->bottom;
-	stack->bottom->prev = stack->top;
-	stack->top->prev = NULL;
-	stack->bottom->next = NULL;
-	stack->size = 0;
-	while (--i >= 0 && argv[i])
-	{
-		if (is_int(argv[i]) == 0)
-			ft_putstr_fd("Error\n", 2);
-		if (is_int(argv[i]) == 0)
-			exit(0);
-		ft_push(stack, ft_atol(argv[i]) + INT_MAX + 1);
-	}
-	if (is_duplicate(stack) == 1)
-		ft_putstr_fd("Error\n", 2);
-	if (is_duplicate(stack) == 1)
-		exit(0);
-}
 
 void	ft_init_stack(t_stack *stack, char **arg)
 {
