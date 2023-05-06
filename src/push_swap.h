@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 23:36:09 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/06 13:10:58 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/06 13:21:41 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	*malloc_check(void *ptr);
 void	*malloc_and_check(size_t size);
 char	*ft_strappend(char *s1, char *s2);
 void	free_all(char **arg, t_stack *stack);
-void	free_exit(char **arg, t_stack *stack);
+void	free_exit(char **arg, t_stack *stack, int exitno);
 
 //	stack_utils.c
 void	ft_init_stack(t_stack *sa, t_stack *sb, int argc, char **argv);
@@ -71,7 +71,8 @@ void	ft_rotate(t_stack *stack);
 //	stack_utils2.c
 void	ft_reverse_rotate(t_stack *stack);
 void	ft_print_stack(t_stack *sa, t_stack *sb);
-void	ft_push_back(t_stack *sa, t_stack *sb);
+void	ft_push_back(t_node *stack, long data);
+int		ft_stack_size(t_stack *stack);
 
 //	stack_utils3.c
 int		is_sorted(t_stack *stack);

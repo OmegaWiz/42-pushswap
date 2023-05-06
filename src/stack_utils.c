@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 13:56:01 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/04 18:30:38 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/06 13:23:33 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,23 @@ void	ft_init_stack(t_stack *sa, t_stack *sb, int argc, char **argv)
 		ft_putstr_fd("Error\n", 2);
 	if (is_duplicate(stack) == 1)
 		exit(0);
+}
+
+void	ft_init_stack(t_stack *stack, char **arg)
+{
+	ssize_t	i;
+
+	i = -1;
+	while (arg[++i])
+	{
+		if (is_int(arg[i]))
+			ft_push_back(stack->a_top, ft_atol(arg[i]) + INT_MAX + 1);
+		else
+			free_exit(stack, arg, ENOMEM);
+	}
+	if (is_duplicate(stack->a_top) || ft_stack_size(stack->a_top) != i)
+		free_exit(stack, arg, ENOMEM);
+	free_all(arg, NULL);
 }
 
 void	ft_push(t_stack *stack, long data)

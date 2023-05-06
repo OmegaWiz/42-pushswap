@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 13:54:24 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/06 12:04:34 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/06 13:25:49 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,11 +52,14 @@ void	free_all(char **arg, t_stack *stack)
 	t_node	*tmp;
 
 	i = -1;
-	while (arg[++i])
+	if (arg)
 	{
-		free(arg[i]);
+		while (arg[++i])
+			free(arg[i]);
+		free(arg);
 	}
-	free(arg);
+	if (stack == NULL)
+		return ;
 	while (stack->a_top != NULL)
 	{
 		tmp = stack->a_top;
@@ -71,8 +74,10 @@ void	free_all(char **arg, t_stack *stack)
 	}
 }
 
-void	free_exit(char **arg, t_stack *stack)
+void	free_exit(char **arg, t_stack *stack, int exitno)
 {
 	free_all(arg, stack);
+	if (exitno != 0)
+		ft_putstr_fd("Error\n", 2);
 	exit(ENOMEM);
 }

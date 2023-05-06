@@ -6,16 +6,11 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 13:56:10 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/04 18:31:10 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/06 13:23:16 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	ft_empty_stack(t_stack *sa, t_stack *sb)
-{
-	
-}
 
 void	ft_reverse_rotate(t_stack *stack)
 {
@@ -58,12 +53,36 @@ void	ft_print_stack(t_stack *sa, t_stack *sb)
 	ft_putchar_fd('\n', 1);
 }
 
-void	ft_push_back(t_stack *sa, t_stack *sb)
+void	ft_push_back(t_node *stack, long data)
 {
-	while (sb->size > 0)
+	t_node	*ptr;
+
+	ptr = stack;
+	if (ptr == NULL)
 	{
-		ft_push(sa, sb->top->next->data);
-		ft_pop(sb);
-		ft_putstr_fd("pa\n", 1);
+		ptr = (t_node *) malloc(sizeof(t_node));
+		ptr->data = data;
+		ptr->next = NULL;
+		return ;
 	}
+	while (ptr->next)
+		ptr = ptr->next;
+	ptr->next = (t_node *) malloc(sizeof(t_node));
+	ptr->next->data = data;
+	ptr->next->next = NULL;
+}
+
+int	ft_stack_size(t_stack *stack)
+{
+	t_node	*tmp;
+	int		i;
+
+	i = 0;
+	tmp = stack;
+	while (tmp)
+	{
+		i++;
+		tmp = tmp->next;
+	}
+	return (i);
 }
