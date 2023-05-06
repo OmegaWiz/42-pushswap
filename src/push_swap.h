@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 23:36:09 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/04 18:33:07 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/06 10:33:59 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include<fcntl.h>
 # include<stdlib.h>
 # include<limits.h>
+# include<errno.h>
 # include"../lib/libft/libft.h"
 
 # ifndef DEBUG
@@ -33,9 +34,8 @@ typedef struct s_node	t_node;
 
 struct s_stack
 {
-	t_node	*top;
-	t_node	*bottom;
-	int		size;
+	t_node	*a_top;
+	t_node	*b_top;
 };
 typedef struct s_stack	t_stack;
 
@@ -57,6 +57,7 @@ int		arg_count(char **arg);
 void	*malloc_check(void *ptr);
 void	*malloc_and_check(size_t size);
 void	free_all(char **arg, t_stack *a, t_stack *b)
+void	free_exit(char **arg, t_stack *a, t_stack *b);
 
 //	stack_utils.c
 void	ft_init_stack(t_stack *sa, t_stack *sb, int argc, char **argv);

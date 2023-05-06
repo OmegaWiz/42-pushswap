@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 13:54:24 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/04 18:33:02 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/06 10:35:59 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*malloc_check(void *ptr)
 	if (!ptr)
 	{
 		ft_putstr_fd("Error\n", 2);
-		exit(1);
+		exit(ENOMEM);
 	}
 	return (ptr);
 }
@@ -30,7 +30,7 @@ void	*malloc_and_check(size_t size)
 	if (!ptr)
 	{
 		ft_putstr_fd("Error\n", 2);
-		exit(1);
+		exit(ENOMEM);
 	}
 	return (ptr);
 }
@@ -57,4 +57,10 @@ void	free_all(char **arg, t_stack *a, t_stack *b)
 		free(b->top);
 	if (b->bottom)
 		free(b->bottom);
+}
+
+void	free_exit(char **arg, t_stack *a, t_stack *b)
+{
+	free_all(arg, a, b);
+	exit(ENOMEM);
 }
