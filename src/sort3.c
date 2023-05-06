@@ -6,13 +6,13 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 14:01:18 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/04 17:51:39 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/06 15:16:10 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_push_swap_3_cont(t_stack *sa, long a, long b, long c)
+void	ft_push_swap_3_cont(t_node *sa, long a, long b, long c)
 {
 	if (a < b && b > c && a > c)
 	{
@@ -33,15 +33,15 @@ void	ft_push_swap_3_cont(t_stack *sa, long a, long b, long c)
 	}
 }
 
-void	ft_push_swap_3(t_stack *sa)
+void	ft_push_swap_3(t_node *sa)
 {
 	long	a;
 	long	b;
 	long	c;
 
-	a = sa->top->next->data;
-	b = sa->top->next->next->data;
-	c = sa->top->next->next->next->data;
+	a = sa->data;
+	b = sa->next->data;
+	c = sa->next->next->data;
 	if (is_sorted(sa))
 		return ;
 	if (a < b && b > c && a < c)
@@ -59,7 +59,7 @@ void	ft_push_swap_3(t_stack *sa)
 	ft_push_swap_3_cont(sa, a, b, c);
 }
 
-void	ft_push_swap_3_rev_cont(t_stack *sb, long a, long b, long c)
+void	ft_push_swap_3_rev_cont(t_node *sb, long a, long b, long c)
 {
 	if (a > b && b < c && a < c)
 	{
@@ -80,15 +80,15 @@ void	ft_push_swap_3_rev_cont(t_stack *sb, long a, long b, long c)
 	}
 }
 
-void	ft_push_swap_3_rev(t_stack *sb)
+void	ft_push_swap_3_rev(t_node *sb)
 {
 	long	a;
 	long	b;
 	long	c;
 
-	a = sb->top->next->data;
-	b = sb->top->next->next->data;
-	c = sb->top->next->next->next->data;
+	a = sb->data;
+	b = sb->next->data;
+	c = sb->next->next->data;
 	if (is_sorted_rev(sb))
 		return ;
 	if (a > b && b < c && a > c)
