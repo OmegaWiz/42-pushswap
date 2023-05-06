@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 13:56:10 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/06 14:51:26 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/06 15:31:52 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,31 @@ void	ft_print_stack(t_stack *stack)
 	}
 	ft_putchar_fd('\n', 1);
 	tmp = stack->b_top;
+	ft_putstr_fd("B | ", 1);
+	while (tmp)
+	{
+		ft_putnbr_fd(tmp->data + INT_MIN, 1);
+		ft_putchar_fd(' ', 1);
+		tmp = tmp->next;
+	}
+	ft_putchar_fd('\n', 1);
+}
+void	ft_print_stack2(t_node *sa, t_node *sb)
+{
+	t_node	*tmp;
+
+	if (DEBUG == 0)
+		return ;
+	tmp = sa;
+	ft_putstr_fd("A | ", 1);
+	while (tmp)
+	{
+		ft_putnbr_fd(tmp->data + INT_MIN, 1);
+		ft_putchar_fd(' ', 1);
+		tmp = tmp->next;
+	}
+	ft_putchar_fd('\n', 1);
+	tmp = sb;
 	ft_putstr_fd("B | ", 1);
 	while (tmp)
 	{
