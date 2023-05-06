@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 23:35:28 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/06 17:01:39 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/06 17:02:51 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,9 @@ void	ft_push_swap_small(t_stack *stack)
 	if (n == 3)
 		ft_push_swap_3(stack->a_top);
 	if (n == 4)
-		ft_push_swap_4(stack->a_top);
+		ft_push_swap_4(stack->a_top, stack->b_top);
 	if (n == 5)
-		ft_push_swap_5(stack->a_top);
+		ft_push_swap_5(stack->a_top, stack->b_top);
 	if (n == 6)
 		ft_push_swap_6(stack->a_top, stack->b_top);
 	if (n == 7)
@@ -83,7 +83,7 @@ int	main(int argc, char **argv)
 		ft_push_swap_small(&stack);
 	else
 	{
-		while (is_sorted(&sa) == 0)
+		while (is_sorted(stack.a_top) == 0)
 		{
 			ft_push_swap(stack.a_top, stack.b_top, n);
 			n = n * 2;
