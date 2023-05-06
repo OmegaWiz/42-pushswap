@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 17:53:10 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/06 16:48:01 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/06 17:04:44 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,11 +98,11 @@ int	is_duplicate(t_node *stack)
 	t_node	*tmp;
 	t_node	*cmp;
 
-	tmp = stack->top->next;
-	while (tmp != stack->bottom)
+	tmp = stack;
+	while (tmp)
 	{
-		cmp = stack->top->next;
-		while (cmp != tmp)
+		cmp = stack->next;
+		while (cmp != tmp && cmp)
 		{
 			if (cmp->data == tmp->data)
 				return (1);
