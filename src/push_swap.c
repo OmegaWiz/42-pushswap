@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 23:35:28 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/06 17:00:12 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/06 17:01:39 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,23 +43,26 @@ void	ft_push_swap(t_node *sa, t_node *sb, long bucket)
 
 void	ft_push_swap_small(t_stack *stack)
 {
-	if (sa->size == 2)
+	int	n;
+
+	n = ft_stack_size(stack->a_top);
+	if (n == 2)
 		ft_push_swap_2(stack->a_top);
-	if (sa->size == 3)
+	if (n == 3)
 		ft_push_swap_3(stack->a_top);
-	if (sa->size == 4)
+	if (n == 4)
 		ft_push_swap_4(stack->a_top);
-	if (sa->size == 5)
+	if (n == 5)
 		ft_push_swap_5(stack->a_top);
-	if (sa->size == 6)
+	if (n == 6)
 		ft_push_swap_6(stack->a_top, stack->b_top);
-	if (sa->size == 7)
+	if (n == 7)
 		ft_push_swap_7(stack->a_top, stack->b_top);
-	if (sa->size == 8)
+	if (n == 8)
 		ft_push_swap_8(stack->a_top, stack->b_top);
-	if (sa->size == 9)
+	if (n == 9)
 		ft_push_swap_9(stack->a_top, stack->b_top);
-	if (sa->size == 10)
+	if (n == 10)
 		ft_push_swap_10(stack->a_top, stack->b_top);
 }
 
