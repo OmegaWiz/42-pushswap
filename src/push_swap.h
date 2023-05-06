@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 23:36:09 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/06 15:32:03 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/06 16:46:45 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,9 +79,6 @@ void	ft_stack_index(t_node *stack);
 //	stack_utils3.c
 int		is_sorted(t_node *stack);
 int		is_sorted_rev(t_node *stack);
-
-//	find_mid.c
-long	find_mid(t_stack *s, int n);
 
 //	sort2.c
 void	ft_push_swap_2(t_node *sa);
