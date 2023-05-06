@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 23:36:09 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/06 16:46:45 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/06 16:48:06 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	ft_push_swap_small(t_stack *stack);
 
 //	arg_check.c
 int		is_int(const char *nbr);
-int		is_duplicate(t_stack *stack);
+int		is_duplicate(t_node *stack);
 long	ft_atol(const char *nbr);
 //
 

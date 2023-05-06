@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 17:53:10 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/04 17:42:01 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/06 16:48:01 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ int	is_int(const char *nbr)
 	return (is_int_cont(nbr, i, j, is_number));
 }
 
-int	is_duplicate(t_stack *stack)
+int	is_duplicate(t_node *stack)
 {
 	t_node	*tmp;
 	t_node	*cmp;
