@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 23:36:09 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/06 13:51:48 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/06 13:52:26 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,6 @@ void	free_exit(char **arg, t_stack *stack, int exitno);
 //	stack_utils.c
 void	ft_init_stack(t_stack *stack, char **arg);
 void	ft_push(t_node *s_from, t_node *s_to);
-void	ft_pop(t_stack *stack);
 void	ft_swap(t_stack *stack);
 void	ft_rotate(t_stack *stack);
 //
