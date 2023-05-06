@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 13:56:10 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/06 15:31:52 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/06 17:12:13 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,7 @@ void	ft_stack_index(t_node *stack)
 {
 	t_node	*ptr;
 	t_node	*min;
-	size_t	i;
+	int	i;
 
 	i = 0;
 	while (i < ft_stack_size(stack))
