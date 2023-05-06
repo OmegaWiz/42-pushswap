@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 23:36:09 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/06 13:28:49 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/06 13:45:31 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@
 struct s_node
 {
 	long			data;
+	long			index;
 	struct s_node	*next;
-	struct s_node	*prev;
 };
 typedef struct s_node	t_node;
 
@@ -73,6 +73,8 @@ void	ft_reverse_rotate(t_stack *stack);
 void	ft_print_stack(t_stack *stack);
 void	ft_push_back(t_node *stack, long data);
 int		ft_stack_size(t_stack *stack);
+void	ft_stack_index(t_node *stack);
+//
 
 //	stack_utils3.c
 int		is_sorted(t_stack *stack);

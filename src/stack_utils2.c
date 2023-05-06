@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 13:56:10 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/06 13:28:40 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/06 13:44:56 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ void	ft_push_back(t_node *stack, long data)
 	{
 		ptr = (t_node *) malloc(sizeof(t_node));
 		ptr->data = data;
+		ptr->index = -1;
 		ptr->next = NULL;
 		return ;
 	}
@@ -69,10 +70,11 @@ void	ft_push_back(t_node *stack, long data)
 		ptr = ptr->next;
 	ptr->next = (t_node *) malloc(sizeof(t_node));
 	ptr->next->data = data;
+	ptr->next->index = -1;
 	ptr->next->next = NULL;
 }
 
-int	ft_stack_size(t_stack *stack)
+int	ft_stack_size(t_node *stack)
 {
 	t_node	*tmp;
 	int		i;
@@ -85,4 +87,27 @@ int	ft_stack_size(t_stack *stack)
 		tmp = tmp->next;
 	}
 	return (i);
+}
+
+void	ft_stack_index(t_node *stack)
+{
+	t_node	*ptr;
+	t_node	*min;
+	size_t	i;
+
+	i = 0;
+	while (i < ft_stack_size(stack))
+	{
+		min = stack;
+		while (min->index >= 0)
+			min = min->next;
+		ptr = stack;
+		while (ptr)
+		{
+			if (ptr->data < min->data && ptr->index < 0)
+				min = ptr;
+			ptr = ptr->next;
+		}
+		min->index = i++;
+	}
 }
