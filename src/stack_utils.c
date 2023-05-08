@@ -22,7 +22,7 @@ void	ft_init_stack(t_stack *stack, char **arg, int argc)
 	while (arg[i])
 		i++;
 	j = i;
-	while (arg[--i])
+	while (--i >= 0)
 	{
 		if (is_int(arg[i]))
 		{

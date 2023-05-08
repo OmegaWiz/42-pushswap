@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 23:36:09 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/08 11:25:07 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/08 12:29:46 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 # include<limits.h>
 # include<errno.h>
 # include"../lib/libft/libft.h"
+
+# include<stdio.h>
 
 # ifndef DEBUG
 #  define DEBUG 0

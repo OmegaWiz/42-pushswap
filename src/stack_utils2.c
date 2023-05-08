@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 13:56:10 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/06 19:37:59 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/08 12:32:28 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,9 +67,24 @@ t_node	*ft_push_front(t_node *stack, long data)
 {
 	t_node	*ptr;
 
-	ptr = (t_node *) malloc(sizeof(t_node));
+	ptr = malloc(sizeof(t_node));
+	if (ptr == NULL)
+	{
+		while (stack)
+		{
+			ptr = stack->next;
+			free(stack);
+			stack = ptr;
+		}
+		return (NULL);
+	}
 	ptr->data = data;
 	ptr->index = -1;
+	if (stack == NULL)
+	{
+		ptr->next = NULL;
+		return (ptr);
+	}
 	ptr->next = stack;
 	stack = ptr;
 	return (ptr);
