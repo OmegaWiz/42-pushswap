@@ -3,3 +3,4 @@ build/*
 push_swap
 *.a
 push_swap.dysM/*
+Push-Swap-Tester/*

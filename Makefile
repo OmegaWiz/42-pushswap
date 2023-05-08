@@ -27,7 +27,7 @@ LIB				=	${addprefix ${LIB_DIR},${LIBS}}
 OBJ				=	${SRC:.c=.o}
 
 CC				=	gcc
-CFLAGS			=	-g -Wall -Wextra -Werror -O3 -fsanitize=address
+CFLAGS			=	-g -Wall -Wextra -Werror -O3
 
 all:			${LIB} ${BUILD_DIR} ${NAME}
 

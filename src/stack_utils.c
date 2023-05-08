@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	ft_init_stack(t_stack *stack, char **arg)
+void	ft_init_stack(t_stack *stack, char **arg, int argc)
 {
 	ssize_t	i;
 	long	data;
@@ -29,6 +29,8 @@ void	ft_init_stack(t_stack *stack, char **arg)
 			free_exit(arg, stack, 255);
 	}
 	if (ft_stack_size(stack->a_top) != i)
+		free_exit(arg, stack, 255);
+	if (ft_stack_size(stack->a_top) < argc)
 		free_exit(arg, stack, 255);
 	if (is_duplicate(stack->a_top))
 		free_exit(arg, stack, 255);
