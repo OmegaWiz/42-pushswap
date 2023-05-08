@@ -30,7 +30,7 @@ void	ft_init_stack(t_stack *stack, char **arg, int argc)
 	}
 	if (ft_stack_size(stack->a_top) != i)
 		free_exit(arg, stack, 255);
-	if (ft_stack_size(stack->a_top) < argc)
+	if (ft_stack_size(stack->a_top) < argc - 1)
 		free_exit(arg, stack, 255);
 	if (is_duplicate(stack->a_top))
 		free_exit(arg, stack, 255);
