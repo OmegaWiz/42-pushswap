@@ -1,6 +1,8 @@
 .DS_Store
 build/*
 push_swap
+checker
 *.a
 push_swap.dysM/*
 Push-Swap-Tester/*
+push_swap_tester/*
