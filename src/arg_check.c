@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 17:53:10 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/06 17:41:39 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/08 10:29:58 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,16 @@ long	ft_atol(const char *nbr)
 
 int	is_int_cont(const char *nbr, int i, int j, int is_number)
 {
-	if (i - j > 10)
+	int	k;
+
+	k = j;
+	while (k < i)
+	{
+		if (ft_isdigit(nbr[k]) && nbr[k] != '0')
+			break ;
+		k++;
+	}
+	if (k - i > 10)
 		return (0);
 	if (ft_atol(nbr) > INT_MAX || ft_atol(nbr) < INT_MIN)
 		return (0);
