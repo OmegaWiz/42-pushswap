@@ -14,11 +14,15 @@
 
 void	ft_init_stack(t_stack *stack, char **arg, int argc)
 {
-	ssize_t	i;
+	int		i;
+	int		j;
 	long	data;
 
-	i = -1;
-	while (arg[++i])
+	i = 0;
+	while (arg[i])
+		i++;
+	j = i;
+	while (arg[--i])
 	{
 		if (is_int(arg[i]))
 		{
@@ -28,7 +32,7 @@ void	ft_init_stack(t_stack *stack, char **arg, int argc)
 		else
 			free_exit(arg, stack, 255);
 	}
-	if (ft_stack_size(stack->a_top) != i)
+	if (ft_stack_size(stack->a_top) != j)
 		free_exit(arg, stack, 255);
 	if (ft_stack_size(stack->a_top) < argc - 1)
 		free_exit(arg, stack, 255);
