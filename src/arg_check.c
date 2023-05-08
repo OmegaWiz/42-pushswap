@@ -6,7 +6,7 @@
 /*   By: kkaiyawo <kkaiyawo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 17:53:10 by kkaiyawo          #+#    #+#             */
-/*   Updated: 2023/05/08 10:29:58 by kkaiyawo         ###   ########.fr       */
+/*   Updated: 2023/05/08 12:39:16 by kkaiyawo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ long	ft_atol(const char *nbr)
 	i = 0;
 	is_neg = 0;
 	res = 0;
-	while (is_space(nbr[i]))
+	while (nbr[i] && is_space(nbr[i]))
 		i++;
 	if (nbr[i] == '-' || nbr[i] == '+')
 	{
@@ -80,7 +80,7 @@ int	is_int(const char *nbr)
 
 	i = 0;
 	is_number = 0;
-	while (is_space(nbr[i]))
+	while (nbr[i] && is_space(nbr[i]))
 		i++;
 	if (nbr[i] == '-' || nbr[i] == '+')
 		i++;
